@@ -1,0 +1,36 @@
+﻿<Window x:Class="Spotifaille.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spotifaille"
+        mc:Ignorable="d"
+        Title="Spotifaille corp" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Label Content="SpotiFaille"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Name="FilePath" Width="150"  Text="Ouvrir un fichier mp3 ..."  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="Parcourir" Name="OpenFile" Width ="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OpenFile_Click"/>
+        <MediaElement IsMuted="{Binding IsMuted}" LoadedBehavior="Manual" Name="MusicMedia" Margin="20,20,20,20" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+
+        <Button IsEnabled="False" Grid.Row="1" Grid.Column="2" Content="Play" Name="PlayButton" Width ="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Play_Click"/>
+        <Button IsEnabled="False" Grid.Row="2" Grid.Column="2" Content="Pause" Name="PauseButton" Width ="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Pause_Click"/>
+        <Button IsEnabled="False" Grid.Row="3" Grid.Column="2" Content="Mute" Name="MuteButton" Width ="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Mute_Click"/>
+        <Label Grid.Row="4" Grid.Column="2" Content="Vitesse" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Slider IsEnabled="False" Grid.Row="4" Grid.Column="2" Name="SliderMusic" HorizontalAlignment="Center" VerticalAlignment="center" Margin="20,20" Width="150" Value="1" Ticks="1, 1.25, 1.5, 1.75, 2" Minimum="1" Maximum="2" IsSelectionRangeEnabled="true" SelectionStart="0" AutoToolTipPlacement="BottomRight" ValueChanged="Slider_ValueChanged"/>
+
+    </Grid>
+</Window>
